@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<style>
+    #category {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: large;
+    }
+    #question {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bolder;
+        font-size: larger;
+        margin: 10px;
+    }
+    #answer {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bolder;
+        font-size: larger;
+    }
+
+    section {
+        text-align: center;
+    }
+   
+</style>
+
+<body>
+
+    <section>
+    <button onclick="qa()">New Question</button> <br>
+    <div id="category"></div>
+    <div id="question"></div> <br>
+    <button onclick="showAnswer()">Show Answer</button>
+    <div id="answer"></div>
+</section>
+
+</body>
+</html>
+
+<script>
+    var question = document.querySelector("#question");
+    var answer = document.querySelector("#answer");
+    var category = document.querySelector('#category');
+    var theAnswer = "";
+
+    function qa() {
+        $.getJSON('https://jservice.io/api/random', function(data) {
+            question.innerHTML = data[0].question;
+            category.innerHTML = "Category: " + data[0].category.title;
+            theAnswer = data[0].answer;
+        });
+    }
+    function showAnswer() {
+        answer.innerHTML = theAnswer;
+    }
+</script>

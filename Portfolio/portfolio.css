@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: white;
+    color: white;
+}
+
+#header{
+    width:100%;
+    height:100vh;
+    background-image: url(images/portfolio.png);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding:10px 35px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;  
+    margin-left: 50%;  
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+
+}
+
+nav ul li a {
+    color: rgb(79, 78, 78);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    background-color: rgba(201, 248, 197, 0.857);
+    border-radius: 5px;
+    padding: 3px 6px 3px 6px;
+
+
+}    
+
+.header-text{
+    margin-top:35%;
+    font-size: 25px;
+    box-shadow: 7px 7px 1px rgb(201, 248, 197); 
+    text-shadow: 3px 3px rgba(12, 12, 12, 0.613);
+}
+.header-text h1{
+    font-size: 50px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 7px 2px  rgba(12, 12, 12, 0.613);
+}
+.header-text h1 span{
+    color:rgb(201, 248, 197);
+}
+
+/* -----about me----- */
+
+#about{
+    padding: 80px 0;
+    color: rgb(128, 185, 123);
+    height: 100vh;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+} 
+.about-col-2{
+    flex-basis: 60%;
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.sub-title{
+    font-size: 40px;
+    font-weight: 600;
+    color: rgb(128, 185, 123);
+}
+
+.tab-titles{
+    display: flex;
+    margin:20px 0 20px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: black;
+    position: absolute;
+    left:0;
+    bottom:-8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: Black;
+    font-size: 14px;
+} 
+.tab-contents{
+    display: none;
+    background-color: rgb(249, 244, 216);
+    padding: 10px 25px 10px 25px;
+    margin-right: 20%;
+    border-radius: 15px;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* -----projects----- */
+
+#projects{
+    padding: 20px 0;
+    height: 100vh;
+
+}
+.project-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 30px;
+    margin-top: 50px;
+}
+.project{
+    border-radius: 8px;
+    position: relative;
+    overflow:hidden;
+}
+.project img{
+    width: 90%;
+    height: 470px;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 30px 30px rgba(53, 87, 49, 0.846);
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.project a{
+    text-decoration: none;
+    color: white;
+}
+.project h3{
+    font-size: 25px;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(156, 228, 163, 0.515), rgb(0, 0, 0));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.project:hover img{
+    transform: scale(1.05);
+}
+.project:hover .layer{
+    height: 100%;
+}
+
+/* -----courses----- */
+
+#course{
+    padding: 30px 0;
+    color: black;
+}
+.courses-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.courses-list div{
+    background: rgb(154, 213, 149);
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 8px;
+    transition: background 0.5s, transform 0.5s;
+    width: 500px;
+}
+.courses-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.courses-list div a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.courses-list div:hover{
+    background-color: rgb(249, 244, 216);
+    transform: translateY(-10px);
+}
+.courses-list a:hover{
+    color: rgb(154, 213, 149);
+}
+
+/* -----contact----- */
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+    color: black;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background-color: rgb(154, 213, 149);
+    padding: 15px;
+    margin: 15px 0;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 30px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+

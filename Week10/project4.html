@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">
+</script>
+
+<style>
+   
+    body {
+    background-color: #E6E6FA;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    }
+    h3 {
+        color:#b19cd9;
+        font-size:x-large;
+    }
+    img {
+        width: 250px;
+        border-radius: 2em;
+        border-style: dotted;
+        border-width: 8px;
+        padding:3px;
+        border-color: #b19cd9;
+    }
+        
+    button {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:bold;
+    font-size: large;
+    padding: 5px;
+    width: 20%;
+    align-self: center;
+    }
+    
+
+</style>
+
+<body>
+    <div id="button">
+    <button onclick="classStudents()">Students in My Class</button>
+</div>
+
+    <div id="maindiv"></div>
+
+</body>
+</html>
+
+<script>
+    var divLoad = document.querySelector('#maindiv');
+
+    function classStudents() {
+        divLoad.innerHTML = "";
+        $.getJSON('https://raw.githubusercontent.com/emuel/api/master/5110', function(data) {
+            for (i=0; i<data.length; i++) {
+                divLoad.innerHTML += "<h3>"+data[i].stu_name+" "+data[i].last_name+"</h3>";
+                divLoad.innerHTML += "<img src=https://" + data[i].domain + "/images/me.jpg> </div>";
+                divLoad.innerHTML += "<div class='facts'>"+data[i].fact+"</div>";
+            }            
+        });
+    }   
+
+</script>

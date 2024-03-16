@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#course">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Management Information System</p>
+            <p>Student at UGA</p>
+            <h1>Hello, I'm <span>Ngoc!</span> Welcome to my portfolio.</h1>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/portfolio1.png"> 
+            </div>
+            <div class="about-col-2">
+                <h2 class="sub-title">About Me</h2>
+                <p>I am currently an MIS student at UGA pursuing the New Media certificate. My goal is to improve my front-end and back-end programming abilities while also enhacing my networking skills and building connections with others.</p>
+                <br>
+                <p><u>Here are some of my experiences and skills: </u></p><br>
+                
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="experience">
+                    <ul>
+                        <li><span>Summer 2024</span><br><u>KPMG:</u> Incoming Technology Assurance Auditor</li>
+                        <li><span>Sep 2022-Current</span><br><u>UGA:</u> Parking Services Customer Relations</li>
+                        <li><span>June 2022-Aug 2022</span><br><u>Penske Truck Leasing:</u> Sales and Operations Management Trainee</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="skills">
+                    <ul>
+                        <li><span>Programming Languages</span><br>Java, HTML, CSS, JavaScript</li>
+                        <li><span>Languages</span><br>Fluent in English and Vietnamese</li>
+                        <li><span>Operation Systems</span><br>macOS, Windows, iOS</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2021-2025</span><br>University of Georgia</li>
+                        <li><span>Major and Certificate</span><br>Management Information Systems</li>
+                    </ul>
+                </div>
+            
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="projects">
+    <div class="container">
+        <h2 class="sub-title">My Projects</h2>
+        <div class="project-list">
+            <div class="project">
+                <a href="https://ngocpnguyen.com/nmc/4020/Week10/jukebox.html">
+                    <img src="images/project1.png" >
+                    <div class="layer">
+                        <h3>Jamboree Jukebox!</h3>
+                        <p></p>
+                    </div>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://ngocpnguyen.com/nmc/4020/Week13/kitty/Project6/catshow.html">
+                    <img src="images/project2.png" >
+                    <div class="layer">
+                        <h3>Cat Component</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://ngocpnguyen.com/nmc/4020/final/final.html">
+                    <img src="images/project3.png" >
+                    <div class="layer">
+                        <h3>Movie Search Engine</h3>
+                    </div>
+                </a>    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="course">
+    <div class="container">
+        <h2 class="sub-title">My Courses</h2>
+        <div class="courses-list">
+            <div>
+                <a href="https://ngocpnguyen.com/nmc/4020/">
+                <h2>NMIX 4020</h2>
+                <p>Advanced Web Development</p>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div id="contact" style="margin-top: 25px;">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h2 class="sub-title">Contact Me</h2>
+                <p>Email: npn02439@uga.edu</p>
+                <a href="https://www.linkedin.com/in/ngoc-nguyen-522345226" style="text-decoration: none;"><p>Click for LinkedIn</p></a>
+            </div>
+
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var tablinks = document.getElementsByClassName('tab-links');
+    var tabcontents = document.getElementsByClassName('tab-contents');
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+    
+</body>
+</html>

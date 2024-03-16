@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-color: rgb(217, 233, 250);
+        
+    }
+    section{
+        display: flex;
+        justify-content: center;
+        padding:50px;
+    }
+
+    article {
+        padding: 20px;
+        border-style:double;
+        border-radius: 2em;
+        border-width:3px;
+        margin:10px;
+    }
+
+    .buttons button { 
+    width: 100%;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 8px;
+    }
+    .button1:hover {
+    background-color: #afbbea;
+    color: white;
+    }
+
+    input {
+        height: 40px;
+    }
+    
+</style>
+
+
+
+<body>
+    <h1>Financial Calculator</h1>
+    <section>
+    <article>
+        <h2>INPUT 1</h2>
+        <input type="number" id="input1"> 
+    </article>
+
+    <article>
+        <h2>INPUT 2</h2>
+        <input type="number" id="input2"> 
+    </article>
+
+    <article>
+        <div class="buttons">
+        <button class="button1" id="addButton">Add</button><br>
+        <button class="button1" id="subtractButton">Subtract</button><br>
+        <button class="button1" id="multiplyButton">Multiply</button><br>
+        <button class="button1" id="divideButton">Divide</button><br>
+    </div>
+    </article>
+
+    <article>
+        <h2>OUTPUT</h2>
+        <input type="text" id="output">
+    </article>
+
+    </section>
+
+</body>
+</html>
+
+<script src="calculate.js"></script>

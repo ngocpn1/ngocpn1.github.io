@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    img {
+        width:300px;
+    }
+</style>
+
+<body>
+
+    <button id="previous">previous</button>
+        <button id="next">next</button> <br><br>
+    <div id="juke">
+        
+</div>
+
+</body>
+
+</html>
+
+<script>
+    let juke = document.querySelector('#juke');
+
+    let songs = [
+        {
+            name: "Shooting Star",
+            artist: "XG",
+            image: "xg.jpeg",
+            song: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/ed/13/02/ed130226-0731-b9f1-60f9-4a326a107b4b/mzaf_16585589498935714973.plus.aac.p.m4a",
+        },
+        {
+            name: "Cupid",
+            artist: "FIFTY FIFTY",
+            image: "FIFTYFIFTY.jpeg",
+            song: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/e6/6e/87/e66e87b3-314d-ee50-718e-a8b7b8e3a11a/mzaf_6952755649518725684.plus.aac.p.m4a",
+        },
+        {
+            name: "Black Swan",
+            artist: "BTS",
+            image: "bts.jpeg",
+            song: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/4d/55/07/4d55070d-fa7a-d111-4dd8-59109bec2553/mzaf_11826661297204787079.plus.aac.p.m4a",
+        },
+        {
+            name: "Lucid Dream",
+            artist: "Aespa",
+            image: "aespa.jpeg",
+            song: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c1/c2/97/c1c29738-d852-cff6-b631-32b3bdf42fd8/mzaf_3347219267097722076.plus.aac.p.m4a",
+         },
+         {
+            name: "BAD SAD AND MAD",
+            artist: "BIBI",
+            image: "bibi.jpeg",
+            song: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/7f/a4/9d/7fa49da4-424e-94ec-e42a-bee8755f176c/mzaf_5905542530449137735.plus.aac.p.m4a",
+         }
+    ]
+    let next = document.querySelector('#next');
+    let previous = document.querySelector('#previous');
+    let i = 0;
+    
+    function player(plusMinus){
+        
+        juke.innerHTML ="<h3>"+songs[i].name+"</h3><img src='"+songs[i].image+"'</img><p>by: "+songs[i].artist+"</p><audio controls autoplay src="+songs[i].song+ " type='audio/m4a'></audio>";
+        i += plusMinus;
+        if(i==songs.length) {
+            i=0;
+        }
+        if (i<0) {
+            i=songs.length-1;
+        }
+        // for (let i=1; i<songs.length; i++) {
+        //     juke.innerHTML = "";
+        //     juke.innerHTML +="<h3>"+songs[i].name+"</h3><img src='"+songs[i].image+"'</img><p>by: "+songs[i].artist+"</p><audio controls autoplay src="+songs[i].song+ " type='audio/m4a'></audio>";
+        // }
+    }
+
+    next.onclick = function () {
+        player(1);
+    }
+    previous.onclick = function () {
+        player(-1);
+    }
+   
+</script>

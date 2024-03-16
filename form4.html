@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-color:#ffB6C1;
+    }
+    h1, form {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: white;
+    }
+
+    form {
+        margin: 0 auto;
+        width: 400px;
+        border: 2px solid white;
+        padding: 10px;
+        border-style:double;
+        border-width: 5px;
+    }
+
+    
+    .text-center {
+        text-align: center;
+    }
+
+
+    ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+}
+    
+</style>
+
+
+<body>
+    <h1>The Real Thing</h1>
+
+    <br>
+    <form action="https://nmidev.xyz/db5/receiver.php" method="get" id="firstName" name="firstName">
+       
+        <ul>
+            <li>
+                <label>Enter your name:</label>
+                <input name="yourname">
+            </li>
+            
+            <li>
+                <label>Enter your age:</label>
+                <input name="yourage">
+            </li>
+            
+            <li>
+                <label>Enter your hometown:</label>
+                <input name="home-town">
+            </li>
+         </ul>
+         <br>
+        <div class="text-center">
+        <input type="submit" value="Submit">
+    </div>
+    </form>
+
+</body>
+
+
+</html>

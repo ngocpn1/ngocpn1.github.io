@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Cat Stuff</title>
+</head>
+
+<style>
+img{
+    max-width: 325px;
+    padding-bottom: 20px;
+}
+body{
+    text-align: center;
+    background-color: rgb(201, 248, 197);
+}
+#app{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#kitty{
+    border-style: double;
+    border-color: rgb(107, 154, 103);
+    box-shadow: 20px 20px rgb(107, 154, 103);
+    border-width: 15px;
+    border-radius: 4em;
+    margin: 50px;
+    padding: 15px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:large;
+    width: 400px;
+    background-color: rgb(255, 244, 226);
+
+}
+
+
+</style>
+
+<body>
+    <div id="app">
+        <div v-for="eachCat in catArray" id="kitty">
+            <h2>{{eachCat.name}}</h2>
+            <img :src=dpart1+eachCat.reference_image_id+dpart2>
+            <div v-if="eachCat.rare == 1">
+                This cat is rare!
+            </div>
+            <div v-else="eachCat.rare == 0">
+                This cat is common!
+            </div>
+            <p>{{eachCat.name}}s originally came from {{eachCat.origin}}.</p>
+            <p>They are known to be: {{eachCat.temperament}}</p>
+            <p>{{eachCat.description}}</p>
+            
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="kitty.js"></script>

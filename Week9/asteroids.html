@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        div{
+            background-color: #000;
+            border-radius: 50%;
+            float: left;
+            margin: 10px;
+        }
+
+        #redMax {
+            background-color: red;
+            border-radius: 50%;
+        }
+        #pinkMin {
+            background-color: pink;
+            border-radius: 50%;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<body>
+    <div id="count"></div>
+    <div id="astlist"></div>
+
+    <div id="showData"></div>
+
+</body>
+
+
+</html>
+
+
+<script>
+    let asteroidDisplay = document.querySelector('body');
+
+
+$( document ).ready(function() {
+    $.getJSON('https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=ZuhP8FG8fGTKXJoMdd6hTv0s55cYbN1hnsTWQk1Q', function(data) {
+        var howMany = data.near_earth_objects.length;
+        
+        let dataSource = data.near_earth_objects;
+        for (var i=0; i<dataSource.length; i++) {
+            let maxWidth = (dataSource[i].estimated_diameter.kilometers.estimated_diameter_max)*10;
+            let minWidth = (dataSource[i].estimated_diameter.kilometers.estimated_diameter_min)*10;
+            let marge = maxWidth/1.81 ;
+            let marge2 = maxWidth/3.5;
+            asteroidDisplay.innerHTML+= "<div style='width:"+maxWidth+"px;height:"+maxWidth+"px'><div style='width:"+minWidth+"px;height:"+minWidth+"px; background-color: #444; margin:" + "px;margin-left:"+marge2+"px;margin-top:"+marge+"px'></div></div>";
+            
+            if (dataSource[i].is_potentially_hazardous_asteroid==true) {
+                asteroidDisplay.innerHTML += "<div id='redMax' style='width:"+maxWidth+"px;height:"+maxWidth+"px'><div id='pinkMin'style='width:"+minWidth+"px;height:"+minWidth+"px;margin-left:"+marge2+"px;margin-top:"+marge+"px'></div></div>"            }
+        }
+     })
+});
+</script>

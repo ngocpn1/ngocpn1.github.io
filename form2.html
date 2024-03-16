@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color:#ffB6C1;
+    }
+    form {
+        padding: 10px;
+        text-align:center;
+    }
+    h1, form {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: white;
+    }
+    
+    form {
+    /* Center the form on the page */
+    margin: 0 auto;
+    width: 400px;
+    /* Form outline */
+    padding: 1em;
+    border: 3px solid white;
+    border-radius: 3em;
+    border-style:dashed;
+    border-width: 4px;
+    }
+    
+    fieldset {
+        border-width: 0px;
+    }
+    
+
+</style>
+
+<body>
+    <h1>More Complex Form Elements</h1>
+    <br>
+    <form action="showme.html" method="get">
+        <label for="berries">Choose a Berry:</label>
+        <br><br>
+        <select name="berries" id="berries">
+            <option value="blueberries">Blueberries</option>
+            <option value="blackberries">Blackberries</option>
+            <option value="raspberries">Raspberries</option>
+            <option value="cranberries">Cranberries</option>
+            <option value="strawberries">Strawberries</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    <br><br>
+
+
+    <form autocomplete="off" action="/action_page.php">
+        <label for="colorOfBerries">What is the color of your berry?</label>
+        <br><br>
+        <input id="myInput" type="text" name="myCountry" placeholder="Red Orange Yellow">
+        <input type="submit">
+    </form>
+
+    <br><br>
+
+
+    <form>
+        <fieldset>
+            <legend>Would you rather???</legend>
+
+            <input type="radio" id="leg" name="leg">
+            <label for="rather">Lose a leg!</label>
+            
+            <br><br>
+            <input type="radio" id="arm" name="arm">
+            <label for="rather">Lose an arm!!</label>
+            
+            <br><br>
+            
+            <input type="radio" id="eye" name="eye">
+            <label for="rather">Lose your eyes!!!</label>
+            <br><br>
+
+        </fieldset>
+    </form>
+
+    <br><br>
+
+
+    <form>
+        <label for="legs">How many legs does an octopus have?</label>
+        <br><br>
+        <input type="number" id="number" name="number" placeholder="100">
+        <input type="submit" value="Submit">
+    </form>
+
+
+</body>
+</html>

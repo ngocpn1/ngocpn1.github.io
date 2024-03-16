@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+ <link rel="stylesheet" href="ship.css">
+</head>
+
+
+<style>
+        #ship {
+            width: 300px;
+            height: 118px;
+            background-image: url('spaceship.png');
+            position: absolute;
+            left: 1px;
+            top: 40px;
+        }
+
+        #shipLight {
+            height: 20px;
+            width: 20px;
+            border-radius: 90%;
+            background-color: red;
+            position: absolute;
+            left: 211px;
+            top: 52px;
+        }    
+</style>
+
+
+<body>
+   
+    <div id="ship">
+        <div id="shipLight"></div>
+    </div>
+
+    <button onclick = "direction(-4)">Reverse</button>
+    <button onclick="rotate(30)">Rotate</button>
+
+</body>
+</html>
+
+
+<script>
+    let ship = document.querySelector('#ship');
+    let shipLight = document.querySelector('#shipLight')
+    let howfar = 0;
+    let light = 0;
+    let valence = 1;
+    let rotateMe = 0;
+
+    setInterval(function() {
+     howfar += valence;
+     light++
+     if (howfar>1400) {howfar=-300;}
+     if (light==25) {
+        shipLight.style.backgroundColor='black';
+     }
+     if (light==50) {
+        shipLight.style.backgroundColor='red';
+        light = 0;}
+    ship.style.left=howfar+"px";
+
+     
+
+}, 5);
+
+function direction(num) {
+    valence += num;
+    if (howfar<-300) {howfar=1000;}
+
+}
+function rotate(num) {
+    rotateMe+=num;
+    ship.style.transform = "rotate("+rotateMe+"deg)";
+}
+    
+   
+</script>

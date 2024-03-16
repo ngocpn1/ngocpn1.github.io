@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="namehere" placeholder="Your Name Here"> <br>
+    <div id="result"></div>
+
+    <button onclick="fortune()"> your fortune</button>
+
+
+</body>
+</html>
+
+
+<script>
+    let outcomes = ["win the lottery this week", "get a sunburn on a trip to Hawaii this Decemeber",
+    "win $2000 betting against your favorite foodball team this fall!", "fall into a sinkhold and die :(" ,
+    "get an A on your physics exam!!!"]
+
+    function fortune() {
+        let name = document.querySelector('#namehere').value;
+        let item = Math.floor((Math.random() * outcomes.length));
+
+        let result = document.querySelector('#result');
+        result.innerHTML = name + "your fortune is that you will " + outcomes[item];
+
+    }
+</script>

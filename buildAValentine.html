@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color: #fbdbe5;
+    }
+
+    .heart{
+        background-color: red;
+        height: 70px;
+        width: 70px;
+        position: absolute;
+        top: 43%;
+        left: 45%;
+        transform: rotate(45deg);
+        animation: beat 2s infinite;
+    }
+
+    .heart-1, .heart-2{
+        background-color: red;
+        height: 40px;
+        width: 70px;
+        position: relative;
+        bottom: 38px;
+        border-radius: 70px 70px 0px 0px;
+    }
+
+    .heart-1{
+        bottom: 38px;
+    }
+
+    .heart-2{
+        bottom: 25px;
+        right: 52px;
+        transform: rotate(-90deg);
+    }
+
+    @keyframes beat{
+        50%{
+        transform: rotate(45deg) scale(1.5);
+        }
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 50px;
+        color:red;
+        text-shadow: 7px 5px 1px white;
+
+    }
+</style>
+    <h2>Will you be my Valentine?</h2>
+    <div class="heart">
+        <div class="heart-1"></div>
+        <div class="heart-2"></div>
+    </div>
+
+
+<body>
+    
+</body>
+</html>

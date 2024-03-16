@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists, Links, and Fonts</title>
+</head>
+
+<style>
+@font-face {
+    font-family:myFont;
+    src: url(ChunkFive-Regular.otf);
+}
+p.one {
+    font-family:myFont;
+    font-size:40px;
+    color:#fb8e9e;
+}
+
+a.one:link {color:#ff0000;}
+a.one:visited {color:rgb(105, 158, 25);}
+a.one:hover {color:#ffcc00;}
+a.one:active {color:crimson;}
+
+a.two:link {color:#ff0000;}
+a.two:visited {color:#0000ff;}
+a.two:hover {font-size:150%;}
+
+a.three:link {color:aquamarine;}
+a.three:visited {color:aquamarine;}
+a.three:hover {background-color:#fb8e9e;}
+
+a.four:link {text-decoration: none;}
+a.four:hover {text-decoration: underline; color:rgb(127, 159, 255)}
+
+a.five:link {color:bisque;}
+a.five:hover {color:#fb8e9e; text-decoration:none;}
+
+a.six:link {color:#0000ff;}
+a.six:hover {color:black;}
+a.six:visited {color:blueviolet; text-decoration:none;}
+
+ul {
+  padding-left: 2rem;
+  list-style-type: none;
+}
+
+ul li {
+  padding-left: 2rem;
+  background-image: url(cat.jpg);
+  background-position: 0 0;
+  background-size: 1.6rem 1.6rem;
+  background-repeat: no-repeat;
+}
+
+</style>
+
+<body>
+    <h1>Lists, Links, and Fonts</h1>
+
+    <h2>Exercise 1: Custom Bullet List</h2>
+    <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Cantaloupes</li>
+    </ul>
+
+    <h2>Exercise 2: Ordered List</h2>
+    <ol start='7'>
+        <li>days</li>
+        <li>weeks</li>
+        <li>months</li>
+    </ol>
+
+    <h2>Exercise 3: Link Styles</h2>
+    <p>The 6 Most Popular Tourist Destinations Are:</p>
+    <ol>
+        <a class="one" href="https://www.toureiffel.paris/en"><li>Eiffel Tower, Paris</li></a>
+        <a class="two" href="https://www.rome.net/colosseum"><li>The Colosseum, Rome</li></a>
+        <a class="three" href="https://www.nps.gov/stli/index.htm"><li>Statue of Liberty, New York City</li></a>
+        <a class="four" href="https://www.britannica.com/place/Machu-Picchu"><li>Machu Picchu, Peru</li></a>
+        <a class="five" href="https://whc.unesco.org/en/list/404/"><li>The Acropolis, Athens</li></a>
+        <a class="six" href="https://whc.unesco.org/en/list/252/"><li>The Taj Mahal, India</li></a>
+    </ol>
+
+    <h2>Exercise 4: Web Fonts</h2>
+    <p class="one">I LIKE IT CHUNKAYYY</p>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<style>
+    #category {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: large;
+    }
+    #question {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bolder;
+        font-size: larger;
+    }
+    #answer {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bolder;
+        font-size: larger;
+    }
+
+    section {
+        text-align: center;
+    }
+   
+</style>
+
+<body>
+
+    <button onclick="qa()">Load New Question Set</button>
+    <div id="maindiv"></div>
+
+</body>
+</html>
+
+<script>
+    var question = document.querySelector("#question");
+    var answer = document.querySelector("#answer");
+    var category = document.querySelector('#category');
+    var theAnswer = [];
+    var divLoad = document.querySelector('#maindiv');
+
+
+    function qa() {
+        divLoad.innerHTML ="";
+        $.getJSON('https://jservice.io/api/random?count=10', function(data) {
+            for (var i=0; i<10; i++) {
+                divLoad.innerHTML += "<h3>Category: "+data[i].category.title+"</h3>";
+                divLoad.innerHTML += "<h3>Question: "+data[i].question+"</h3>";
+                divLoad.innerHTML += "<div id='answer" + i + "'></div>";
+                divLoad.innerHTML += "<button onclick = 'showAnswer("+i+")'>Show Answer</button>";
+                theAnswer.push(data[i].answer);
+            }
+        });
+    }
+    function showAnswer(b) {
+        let whatever = document.querySelector("#answer"+b);
+        whatever.innerHTML="<b>The answer is "+theAnswer[b]+"</b>";
+    }
+</script>
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        .bars{background-color: rgb(201, 248, 197);
+        color: rgb(107, 154, 103);
+        width: 20px;
+        float: left;
+        margin: 25px;
+
+        }
+        button{
+            width: 80px; 
+            background-color: rgb(107, 154, 103);
+            color:white;
+            padding: 8px;
+            border-radius: 12px;
+            border: solid rgb(201, 248, 197) 4px;
+        } </style>
+</head>
+<style>
+    #sect1{
+        height: 250px;
+    }
+    body{
+        background-color: rgb(201, 248, 197);
+        
+    }
+    #cat{
+        display: flex;
+    }
+    #image{
+        height: 230px;
+    }
+    #acat{
+        background-color: rgb(255, 244, 226);
+        border-radius: 3em;
+        text-align: center;
+        padding: 20px;
+        margin:18px;
+        border-style: double;
+        border-width: 15px;
+        border-color:rgb(107, 154, 103);
+        box-shadow: 20px 20px rgb(107, 154, 103); 
+        width: 500px;
+        height: 670px;
+        margin-right:30px;
+    }
+    #explain{
+        background-color: rgb(255, 244, 226);
+        border-radius: 3em;
+        text-align: center;
+        padding: 30px;
+        padding-right: 60px;
+        padding-left: 60px;
+        margin:25px;
+        box-shadow: 20px 20px rgb(107, 154, 103); 
+        width: 1030px;
+        height: 650px;
+        border-color:rgb(107, 154, 103);
+        border-style: double;
+        border-width: 15px;
+
+    }
+    
+    
+    
+    img{
+        width: 250px;
+        max-height:230px;
+    }
+</style>
+
+<body>
+
+    <div id="cat">
+        <div id="slideshow">
+            <cat cats ="bslo"></cat>
+        </div>
+        <div id="slideshow">
+            <cat cats ="abys"></cat>
+        </div>
+        <div id="slideshow">
+            <cat cats ="birm"></cat>
+        </div>
+        <div id="slideshow">
+            <cat cats ="chee"></cat>
+        </div>
+        <div id="slideshow">
+            <cat cats ="ycho"></cat>
+        </div>
+        <div id="slideshow">
+            <cat cats ="rblu"></cat>
+        </div>
+        <div id="slideshow">
+            <cat cats ="pixi"></cat>
+        </div>
+    </div>
+    <div id="explain">
+        <h1>Explanation:</h1>
+        <h2>Goals: </h2>
+        <p>To create various slide shows using the catAPI by implementing the use of componentswith axios.</p>
+        <h2>Components: </h2>
+        <p>Given the base HTML file sets up the Vue.js and Axios frameworks from Professor Emuel, this contains the page's primary structure which has been modified. It has a component "cat" that is resued. The "cats" prop, which contains the breed ID of the cat to be displayed, is accepted by the component and returns us information about the cat's image, grooming needs, adaptability, energy level, shedding, name, origin, description, and temperament. This is possible with the letresponse2 variable that uses axios to retrieve the information and assigns it to the variables created (energy, groom, shedding, etc). Similarly, the loadNextImage method "gets" us the image of the cat by using the breedID. BreedID is very important, hence the use of cat cats ="[breedID]"> under each slideshow div in the HTML"</p>
+        <p>The button is linked to the slideshow function that is is mainly used to move through the slideshow to the next picture If you look at the slideshow function, we can see that the pictures are actually being loaded from response.data, and looking further back in the program to loadNextImage, this is where we get our pictures of the cats. By utilizing axios, we can asign the variable response to the images, "getting" with the url + breedID obtained from the div. There is a limit of 10, so the slideshow mainly consist of 10 pictures. This simplifies things and allows us to loop back to the beginning picture when the variable i>this.allofit.length.</p>
+        <h2>Bar Graph and CSS Structure: </h2>
+        <p>With the help of Prof Emuel's bars div, I was able to modify the bars to be veritcal by changing the width under the css to 20px and changing the format of each bar to vertical instead of the original, width. Next up, instead of mulitplying the number of each variable by 100, I changed it to only 20 so that it is not too big. The variables, groom, shedding, energy and adaptability were retrieved using axios, assigning the number from the api to each variable name, and then printing that out using {{}} brackets in the html under the "template".</p>
+        <p>To make it so that the button "click me" does not annoyingly move everytime the height of the image change, I created 2 more divs within the acat div. Div id=sect1 includes h1 and p of the template and id=image surrounds just the img source, I set it at a certain height for so that everything is stable and length is constant. Think of it as 2 containers within a container (acat). In addition, I made it a scrollable format by setting the cat display to flex.</p>
+    </div>
+    
+    
+
+</body>
+    <script src="catshow.js"></script>
+</html>
